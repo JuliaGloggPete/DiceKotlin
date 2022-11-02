@@ -3,17 +3,15 @@ package com.example.dice
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.view.WindowInsets.Side
 import android.widget.Button
 import android.widget.TextView
-import kotlin.random.Random
 
 class MainActivity : AppCompatActivity() {
 
     var diceResult : Int = 0
     var sides = 6
 
-    lateinit var editTextNumber : TextView
+    lateinit var resultNumber : TextView
 
 // prints new sequence every time
 
@@ -23,8 +21,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         var button = findViewById<Button>(R.id.rollButton)
-
-  editTextNumber= findViewById(R.id.editTextNumber)
+        resultNumber = findViewById(R.id.showDice)
 
 
         button.setOnClickListener {
@@ -33,7 +30,7 @@ class MainActivity : AppCompatActivity() {
 
             roll()
             Log.d("###", "hallo $diceResult")
-            editTextNumber.text =diceResult.toString()
+            resultNumber.text =diceResult.toString()
 
         }
     }
